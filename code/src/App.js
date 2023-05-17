@@ -59,7 +59,7 @@ export const App = () => {
       })
   }
   return (
-    <div>
+    <main>
       <ThoughtsForm
         newThought={newThought}
         onNewThoughtChange={handleNewThoughtChange}
@@ -68,6 +68,6 @@ export const App = () => {
         loading={loading}
         thoughtsList={thoughtsList}
         handleLike={handleLike} />
-    </div>
+    </main>
   );
 }

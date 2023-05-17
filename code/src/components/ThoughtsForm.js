@@ -15,24 +15,26 @@ export const ThoughtsForm = ({ newThought, onNewThoughtChange, handleFormSubmit 
     }
   }
   return (
-    <form onSubmit={handleFormSubmit}>
-      <label htmlFor="new-thought">
-        <h1>Welcome to Happy Thoughts! Type new thought below.</h1>
-        <textarea
-          value={newThought}
-          onChange={onNewThoughtChange}
-          placeholder="Share your happy thoughts here..."
-          // defining a range of maximum rows and characters per row
-          rows="4"
-          cols="40"
-          id="new-thought" />
-        {characterWarning()}
-      </label>
-      <button
-        type="submit"
-        disabled={isSubmitButtonDisabled}>
+    <section className="form-section">
+      <form onSubmit={handleFormSubmit}>
+        <label htmlFor="new-thought">
+          <h1>Welcome to Happy Thoughts! Type new thought below.</h1>
+          <textarea
+            value={newThought}
+            onChange={onNewThoughtChange}
+            placeholder="Share your happy thoughts here..."
+            // defining a range of maximum rows and characters per row
+            rows="4"
+            cols="40"
+            id="new-thought" />
+          {characterWarning()}
+        </label>
+        <button
+          type="submit"
+          disabled={isSubmitButtonDisabled}>
         ❤️ Send Happy Thought ❤️
-      </button>
-    </form>
+        </button>
+      </form>
+    </section>
   )
 }
