@@ -10,21 +10,21 @@ export const ThoughtsList = ({ loading, thoughtsList, handleLike }) => {
   return (
     <section>
       {thoughtsList.map((thought) => (
-        <div key={thought._id}>
+        <div className="thought" key={thought._id}>
           <h4>{thought.message}</h4>
           <button
             className={thought.hearts === 0 ? 'heart-button-nolikes' : 'heart-button'}
             type="button"
             onClick={() => handleLike(thought._id)}>
-            ❤️
+              ❤️
           </button>
           <span>x {thought.hearts}</span>
-          <span className="time">{formatDistanceToNow( // shows how long it has been since a message was posted
+          <span className="time">{formatDistanceToNow(
             new Date(thought.createdAt),
             Date.now(),
             { addSuffix: true }
           )}
-                    &nbsp;ago
+              &nbsp;ago
           </span>
         </div>
       )).reverse()}
