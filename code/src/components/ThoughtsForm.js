@@ -10,7 +10,9 @@ export const ThoughtsForm = ({ newThought, onNewThoughtChange, handleFormSubmit 
       return (<p>Warning! Too many characters...</p>)
     } else {
       return (
-        <p>{newThought.length}/140</p>
+        <div className="character-div">
+          <p>{newThought.length}/140</p>
+        </div>
       )
     }
   }
