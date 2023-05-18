@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import { ThoughtsList } from 'components/ThoughtsList';
 import { ThoughtsForm } from 'components/ThoughtsForm';
+import { Footer } from 'components/Footer';
 
 export const App = () => {
   const [thoughtsList, setThoughtsList] = useState([]);
@@ -59,17 +60,22 @@ export const App = () => {
       })
   }
   return (
-    <div className="app-wrapper">
+    <>
       <main>
-        <ThoughtsForm
-          newThought={newThought}
-          onNewThoughtChange={handleNewThoughtChange}
-          handleFormSubmit={handleFormSubmit} />
-        <ThoughtsList
-          loading={loading}
-          thoughtsList={thoughtsList}
-          handleLike={handleLike} />
+        <div className="app-wrapper">
+          <ThoughtsForm
+            newThought={newThought}
+            onNewThoughtChange={handleNewThoughtChange}
+            handleFormSubmit={handleFormSubmit} />
+          <ThoughtsList
+            loading={loading}
+            thoughtsList={thoughtsList}
+            handleLike={handleLike} />
+        </div>
       </main>
-    </div>
+      <footer>
+        <Footer />
+      </footer>
+    </>
   );
 }

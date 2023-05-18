@@ -20,7 +20,8 @@ export const ThoughtsForm = ({ newThought, onNewThoughtChange, handleFormSubmit 
     <section className="form-section">
       <form onSubmit={handleFormSubmit}>
         <label className="label" htmlFor="new-thought">
-          <h1>Welcome to Happy Thoughts! Type new thought below.</h1>
+          <h1>Welcome to Happy Thoughts.</h1>
+          <h2>Type a new thought below.</h2>
           <textarea
             value={newThought}
             onChange={onNewThoughtChange}
@@ -35,7 +36,7 @@ export const ThoughtsForm = ({ newThought, onNewThoughtChange, handleFormSubmit 
           type="submit"
           className="submit-button"
           disabled={isSubmitButtonDisabled}>
-        ❤️ Send Happy Thought ❤️
+        🍄 Send Happy Thought 🍄
         </button>
       </form>
     </section>
