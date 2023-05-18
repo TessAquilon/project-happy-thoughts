@@ -60,22 +60,20 @@ export const App = () => {
       })
   }
   return (
-    <>
+    <div className="app-wrapper">
       <main>
-        <div className="app-wrapper">
-          <ThoughtsForm
-            newThought={newThought}
-            onNewThoughtChange={handleNewThoughtChange}
-            handleFormSubmit={handleFormSubmit} />
-          <ThoughtsList
-            loading={loading}
-            thoughtsList={thoughtsList}
-            handleLike={handleLike} />
-        </div>
+        <ThoughtsForm
+          newThought={newThought}
+          onNewThoughtChange={handleNewThoughtChange}
+          handleFormSubmit={handleFormSubmit} />
+        <ThoughtsList
+          loading={loading}
+          thoughtsList={thoughtsList}
+          handleLike={handleLike} />
       </main>
       <footer>
         <Footer />
       </footer>
-    </>
+    </div>
   );
 }

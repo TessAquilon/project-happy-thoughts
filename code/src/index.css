@@ -7,6 +7,7 @@ body {
   background-repeat: no-repeat;
   background-position: top center;
   background-attachment: fixed;
+  background-size: cover;
   height: auto;
   width: 100%;
   overflow-x: hidden;
@@ -25,10 +26,7 @@ code {
     margin: auto auto 50px;
     padding-bottom: 50px;
     width: 475px;
-}
-
-main {
-  min-width: 320px;
+    min-width: 320px;
   max-width: 500px;
   margin: 1.5rem auto 1rem auto;
 }
@@ -154,12 +152,11 @@ textarea:focus {
 
 .footer-wrapper {
   width: fit-content;
-  margin: auto;
   display: flex;
   flex-direction: row;
   align-items: center;
   gap: 50px;
-  margin-bottom: 30px;
+  margin-top: 20px;
 }
 
 .footer-icons {
