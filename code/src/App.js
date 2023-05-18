@@ -10,7 +10,7 @@ export const App = () => {
   const [newThought, setNewThought] = useState('');
   const fetchThoughts = () => {
     setLoading(true);
-    fetch('https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts')
+    fetch('https://project-happy-thoughts-api-sfjig4oswa-lz.a.run.app/thoughts')
       .then((res) => res.json())
       .then((data) => setThoughtsList(data))
       .catch((error) => console.error(error))
@@ -32,7 +32,7 @@ export const App = () => {
         message: newThought
       })
     };
-    fetch('https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts', options)
+    fetch('https://project-happy-thoughts-api-sfjig4oswa-lz.a.run.app/thoughts', options)
       .then((res) => res.json())
       .then((data) => setThoughtsList((prevList) => [data, ...prevList]));
   };
@@ -42,7 +42,7 @@ export const App = () => {
     setNewThought('');
   }
   const handleLike = (_id) => {
-    fetch(`https://happy-thoughts-ux7hkzgmwa-uc.a.run.app/thoughts/${_id}/like`, { method: 'POST' })
+    fetch(`https://project-happy-thoughts-api-sfjig4oswa-lz.a.run.app/thoughts/${_id}/like`, { method: 'POST' })
       .then((res) => {
         return res.json()
       })
@@ -59,15 +59,17 @@ export const App = () => {
       })
   }
   return (
-    <main>
-      <ThoughtsForm
-        newThought={newThought}
-        onNewThoughtChange={handleNewThoughtChange}
-        handleFormSubmit={handleFormSubmit} />
-      <ThoughtsList
-        loading={loading}
-        thoughtsList={thoughtsList}
-        handleLike={handleLike} />
-    </main>
+    <div className="app-wrapper">
+      <main>
+        <ThoughtsForm
+          newThought={newThought}
+          onNewThoughtChange={handleNewThoughtChange}
+          handleFormSubmit={handleFormSubmit} />
+        <ThoughtsList
+          loading={loading}
+          thoughtsList={thoughtsList}
+          handleLike={handleLike} />
+      </main>
+    </div>
   );
 }

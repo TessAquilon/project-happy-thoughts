@@ -8,9 +8,9 @@ export const ThoughtsList = ({ loading, thoughtsList, handleLike }) => {
     return <h1>Loading in progress...</h1>
   }
   return (
-    <section>
+    <section className="thought-section">
       {thoughtsList.map((thought) => (
-        <div className="thought" key={thought._id}>
+        <div className="single-thought" key={thought._id}>
           <h4>{thought.message}</h4>
           <button
             className={thought.hearts === 0 ? 'heart-button-nolikes' : 'heart-button'}
