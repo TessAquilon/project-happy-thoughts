@@ -2,10 +2,22 @@
 /* eslint-disable no-underscore-dangle */
 import React from 'react';
 import { formatDistanceToNow } from 'date-fns';
+import { Player, Controls } from '@lottiefiles/react-lottie-player';
 
 export const ThoughtsList = ({ loading, thoughtsList, handleLike }) => {
   if (loading) {
-    return <h1>Loading in progress...</h1>
+    return (
+      <div className="loading-div">
+        <Player
+          autoplay
+          loop
+          src="https://assets4.lottiefiles.com/packages/lf20_sVtsEmSVTI.json"
+          style={{ height: '300px', width: '300px' }}>
+          <Controls visible={false} buttons={['play', 'repeat', 'frame', 'debug']} />
+        </Player>
+        <h1>Loading in progress...</h1>
+      </div>
+    )
   }
   return (
     <section className="thought-section">

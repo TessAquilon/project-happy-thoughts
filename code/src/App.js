@@ -15,7 +15,7 @@ export const App = () => {
       .then((res) => res.json())
       .then((data) => setThoughtsList(data))
       .catch((error) => console.error(error))
-      .finally(() => setLoading(false));
+      .finally(() => setTimeout(() => { setLoading(false) }, 3000))
   };
   useEffect(() => {
     fetchThoughts();

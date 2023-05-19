@@ -169,3 +169,15 @@ textarea:focus {
   color: black;
   cursor: pointer;
 }
+
+.loading-div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.form-animation {
+  display: grid;
+  justify-content: flex-end;
+}

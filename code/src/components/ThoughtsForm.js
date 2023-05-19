@@ -1,5 +1,6 @@
 /* eslint-disable linebreak-style */
 import React from 'react';
+import { Player, Controls } from '@lottiefiles/react-lottie-player';
 
 export const ThoughtsForm = ({ newThought, onNewThoughtChange, handleFormSubmit }) => {
   // disabling the submit button if characters exceed maximum allowed
@@ -38,6 +39,15 @@ export const ThoughtsForm = ({ newThought, onNewThoughtChange, handleFormSubmit 
           disabled={isSubmitButtonDisabled}>
         🍄 Send Happy Thought 🍄
         </button>
+        <div className="form-animation">
+          <Player
+            autoplay
+            loop
+            src="https://assets3.lottiefiles.com/packages/lf20_WnTNaLqbIz.json"
+            style={{ height: '150px', width: '150px' }}>
+            <Controls visible={false} buttons={['play', 'repeat', 'frame', 'debug']} />
+          </Player>
+        </div>
       </form>
     </section>
   )
