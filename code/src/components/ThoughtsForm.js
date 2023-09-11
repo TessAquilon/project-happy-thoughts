@@ -1,7 +1,7 @@
 /* eslint-disable linebreak-style */
 import React from 'react';
 
-export const ThoughtsForm = ({ newThought, onNewThoughtChange, handleFormSubmit }) => {
+const ThoughtsForm = ({ newThought, onNewThoughtChange, handleFormSubmit }) => {
   // disabling the submit button if characters exceed maximum allowed
   const isSubmitButtonDisabled = newThought.length < 4 || newThought.length > 140;
   // display warning if characters exceed maximum allowed, otherwise display amount of characters
@@ -41,4 +41,6 @@ export const ThoughtsForm = ({ newThought, onNewThoughtChange, handleFormSubmit 
       </form>
     </section>
   )
-}
+};
+
+export default ThoughtsForm;

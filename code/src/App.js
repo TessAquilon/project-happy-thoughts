@@ -1,8 +1,8 @@
 /* eslint-disable linebreak-style */
 /* eslint-disable no-underscore-dangle */
 import React, { useState, useEffect } from 'react';
-import { ThoughtsList } from 'components/ThoughtsList';
-import { ThoughtsForm } from 'components/ThoughtsForm';
+import ThoughtsList from 'components/ThoughtsList';
+import ThoughtsForm from 'components/ThoughtsForm';
 import { Footer } from 'components/Footer';
 
 export const App = () => {

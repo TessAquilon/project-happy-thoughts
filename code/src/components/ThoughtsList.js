@@ -3,7 +3,7 @@
 import React from 'react';
 import { formatDistanceToNow } from 'date-fns';
 
-export const ThoughtsList = ({ loading, thoughtsList, handleLike }) => {
+const ThoughtsList = ({ loading, thoughtsList, handleLike }) => {
   if (loading) {
     return (
       <div className="loading-div">
@@ -38,4 +38,6 @@ export const ThoughtsList = ({ loading, thoughtsList, handleLike }) => {
       ))}
     </section>
   );
-}
+};
+
+export default ThoughtsList;
