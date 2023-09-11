@@ -34,7 +34,7 @@ const ThoughtsForm = ({ newThought, onNewThoughtChange, handleFormSubmit }) => {
         </label>
         <button
           type="submit"
-          className="submit-button"
+          className="button"
           disabled={isSubmitButtonDisabled}>
         Send Happy Thought
         </button>

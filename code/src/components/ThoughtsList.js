@@ -3,6 +3,10 @@
 import React from 'react';
 import { formatDistanceToNow } from 'date-fns';
 
+// icon
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faHeart } from '@fortawesome/free-solid-svg-icons';
+
 const ThoughtsList = ({ loading, thoughtsList, handleLike }) => {
   if (loading) {
     return (
@@ -19,10 +23,11 @@ const ThoughtsList = ({ loading, thoughtsList, handleLike }) => {
           <div className="thought-details">
             <div className="likes-wrapper">
               <button
-                className={thought.hearts === 0 ? 'heart-button-nolikes' : 'heart-button'}
+                aria-label="likeThought"
+                className="button icon-button"
                 type="button"
                 onClick={() => handleLike(thought._id)}>
-                  ❤️
+                <FontAwesomeIcon icon={faHeart} />
               </button>
               <span>x {thought.hearts}</span>
             </div>
