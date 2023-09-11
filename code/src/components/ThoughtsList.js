@@ -35,7 +35,7 @@ export const ThoughtsList = ({ loading, thoughtsList, handleLike }) => {
             </span>
           </div>
         </div>
-      )).reverse()}
+      ))}
     </section>
   );
 }
