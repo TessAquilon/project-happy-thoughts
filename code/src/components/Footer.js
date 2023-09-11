@@ -1,16 +1,23 @@
 /* eslint-disable linebreak-style */
 import React from 'react';
 
+// icons
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
+
 export const Footer = () => {
   return (
-    <div className="footer-wrapper">
-      <p className="footer-text">Created by Tess Aquilon 2023</p>
-      <div className="footer-icons">
-        <a href="https://www.linkedin.com/in/tess-aquilon/" target="_blank" rel="noreferrer"> <i className="fa fa-linkedin fa-lg" /></a>
-        <span className="sr-only">LinkedIn</span>
-        <a href="https://github.com/TessAquilon" target="_blank" rel="noreferrer"> <i className="fa fa-github fa-lg" /></a>
-        <span className="sr-only">GitHub</span>
-      </div>
-    </div>
+    <footer role="contentinfo">
+      <hr className="divider" />
+      <p>A website created by Nino Aquilon @Technigo &apos;23.</p>
+      <section className="contact">
+        <a href="https://www.github.com" className="button icon-button" aria-label="Go to my Github">
+          <FontAwesomeIcon icon={faGithub} />
+        </a>
+        <a href="https://www.github.com" className="button icon-button" aria-label="Go to my LinkedIn">
+          <FontAwesomeIcon icon={faLinkedin} />
+        </a>
+      </section>
+    </footer>
   )
 }

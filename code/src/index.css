@@ -151,25 +151,69 @@ textarea:focus {
     height: 35px;
 }
 
-.footer-wrapper {
-  width: fit-content;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  gap: 50px;
-  margin-top: 20px;
+/* Buttons */
+
+
+a.button {
+  text-decoration: none;
 }
 
-.footer-icons {
-  display: flex;
-  gap: 20px;
-}
-
-.footer-icons i {
-  transition: transform 0.2s ease-in-out;
-  color: black;
+button.button {
+  font-family: inherit;
+  background-color: transparent;
+  border: none;
   cursor: pointer;
+  font-size: 16px;
+  font-size: max(16px, 1em);
+  @media screen and (-ms-high-contrast: active) {
+      border: 1px solid currentColor
+  };
 }
+a.button, button.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--btn-color);
+  color: #fff;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.18);
+  text-align: center;
+  line-height: 1.1;
+  transition: 220ms all ease-in-out;
+  &:hover, &:active {
+      background-color: var(--btn-color--hover);
+  };
+  &:focus {
+      outline-style: solid;
+      outline-color: transparent;
+      box-shadow: 0 0 0 4px var(--btn-color--border);
+  };
+  &:not(.icon-button) {
+      padding: 0.25em 0.75em;
+      min-width: 10ch;
+      min-height: 44px;
+      border-radius: 8px;
+  };
+  &:disabled {
+      background-color: var(--input-border);
+  }
+}
+
+.icon-button {
+  width: 2.5rem;
+  height: 2.5rem;
+  padding: 0.35em;
+  border-radius: 50%;
+}
+
+.button__icon {
+  width: 0.9em;
+  height: 0.9em;
+  margin-right: 0.5em;
+  fill: currentColor;
+}
+
+
+
 
 .loading-div {
   display: flex;
