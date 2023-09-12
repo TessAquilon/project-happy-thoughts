@@ -3,7 +3,7 @@ import React from 'react';
 
 const ThoughtsForm = ({ newThought, onNewThoughtChange, handleFormSubmit }) => {
   // disabling the submit button if characters exceed maximum allowed
-  const isSubmitButtonDisabled = newThought.length < 4 || newThought.length > 140;
+  const isSubmitButtonDisabled = newThought.length < 1 || newThought.length > 140;
   // display warning if characters exceed maximum allowed, otherwise display amount of characters
   const characterWarning = () => {
     if (newThought.length > 140) {
@@ -20,12 +20,12 @@ const ThoughtsForm = ({ newThought, onNewThoughtChange, handleFormSubmit }) => {
     <section className="form-section">
       <form onSubmit={handleFormSubmit}>
         <label className="label" htmlFor="new-thought">
-          <h1>Welcome to Happy Thoughts.</h1>
-          <h2>Type a new thought below.</h2>
+          <h1>Welcome to Good Vibes.</h1>
+          <h2>Type a new vibe below.</h2>
           <textarea
             value={newThought}
             onChange={onNewThoughtChange}
-            placeholder="What is making you happy right now?"
+            placeholder="What's making you happy right now?"
             // defining a range of maximum rows and characters per row
             rows="4"
             cols="40"
@@ -34,9 +34,9 @@ const ThoughtsForm = ({ newThought, onNewThoughtChange, handleFormSubmit }) => {
         </label>
         <button
           type="submit"
-          className="button"
+          className="button submit-btn no-glow"
           disabled={isSubmitButtonDisabled}>
-        Send Happy Thought
+        Send Good Vibe
         </button>
       </form>
     </section>

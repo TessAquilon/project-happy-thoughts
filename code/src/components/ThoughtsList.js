@@ -24,7 +24,7 @@ const ThoughtsList = ({ loading, thoughtsList, handleLike }) => {
             <div className="likes-wrapper">
               <button
                 aria-label="likeThought"
-                className="button icon-button"
+                className={thought.hearts === 0 ? 'button icon-button no-glow' : 'button icon-button'}
                 type="button"
                 onClick={() => handleLike(thought._id)}>
                 <FontAwesomeIcon icon={faHeart} />

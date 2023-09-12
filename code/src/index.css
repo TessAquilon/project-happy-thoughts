@@ -3,7 +3,8 @@
   --btn-hover: #CF00CF;
   --btn-border: #CF00CF;
   --btn-disabled: #8b8a8b;
-  --light-pink: #fff6f6;
+  --strong-yellow: #FFE45E;
+  --focus: #6E6BFF;
 }
 
 *,
@@ -79,6 +80,7 @@ p {
 
 ::placeholder{
   font-family: 'Miriam Libre', sans-serif;
+  color: var(--btn-disabled);
 }
 
 .thought-section {
@@ -93,7 +95,7 @@ p {
   min-width: 335px;
   margin: 1.5rem 1rem 1rem 1rem;
   padding: 1.2rem;
-  overflow-wrap: break-word
+  overflow-wrap: break-word;
 }
 
 .thought-details {
@@ -110,7 +112,7 @@ p {
 }
 
 textarea {
-  background-color: var(--light-pink);
+  background-color: #fff;
   border: 1px solid #000;
   box-shadow: 5px 5px 0 0 #000;
   display: flex;
@@ -120,14 +122,15 @@ textarea {
   padding: 10px;
   resize: none;
   width: 400px;
+  transition: 180ms box-shadow ease-in-out;
+  &:focus {
+    outline: 3px solid transparent;
+    box-shadow: 5px 5px 0 0 var(--focus);
+  }
 }
 
 .time {
   color: var(--btn-disabled);
-}
-
-textarea:focus {
-  outline: none;
 }
 
 .likes-wrapper {
@@ -159,19 +162,16 @@ a.button, button.button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  background-color: var(--btn-color);
+  background: var(--btn-color);
   color: #fff;
   box-shadow: 0 3px 5px rgba(0, 0, 0, 0.18);
   text-align: center;
   line-height: 1.1;
   transition: 220ms all ease-in-out;
-  &:hover, &:active {
-      color: var(--btn-hover);
-  };
   &:focus {
       outline-style: solid;
       outline-color: transparent;
-      box-shadow: 0 0 0 4px var(--btn-border);
+      box-shadow: 0 0 0 4px var(--focus);
   };
   &:not(.icon-button) {
       padding: 0.25em 0.75em;
@@ -179,10 +179,29 @@ a.button, button.button {
       min-height: 44px;
       border-radius: 8px;
   };
+  &:not(.no-glow) {
+    -webkit-box-shadow:0px 0px 5px 5px rgba(207,0,207,0.77);
+    -moz-box-shadow: 0px 0px 5px 5px rgba(207,0,207,0.77);
+    box-shadow: 0px 0px 5px 5px rgba(207,0,207,0.77);
+  }
   &:disabled {
       background-color: var(--btn-disabled);
       color: #fff;
   }
+}
+
+@keyframes pulse {
+	0% {
+		transform: scale(0.85);
+	}
+
+	70% {
+		transform: scale(1);
+	}
+
+	100% {
+		transform: scale(0.85);
+	}
 }
 
 .icon-button {
@@ -190,6 +209,27 @@ a.button, button.button {
   height: 2.5rem;
   padding: 0.35em;
   border-radius: 50%;
+  &:hover, &:active {
+    transform: scale(1.1);
+  }
+  &:not(a.icon-button) {
+    &:hover, &:active {
+    transform: scale(1);
+    animation: pulse 1.5s infinite;
+    color: var(--btn-hover);
+  };
+  &:focus {
+    outline-style: solid;
+      outline-color: transparent;
+      box-shadow: 0 0 0 4px var(--focus);
+  }
+}
+  
+}
+
+.submit-btn {
+  background: #FFE45E;
+  color: #000;
 }
 
 .button__icon {
