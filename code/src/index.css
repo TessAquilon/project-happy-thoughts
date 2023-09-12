@@ -256,14 +256,30 @@ footer {
   display: flex;
   text-align: center;
   font-size: inherit;
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
   flex-direction: column;
   align-items: center;
   justify-content: flex-end;
   color: #fff;
+  gap: 1em;
 }
 
 .contact {
   display: flex;
   gap: 1em;
+}
+
+label span{
+  font-size: .75rem;
+  display: inline-block;
+  height: 1rem;
+  line-height: 1rem;
+  font-family: inherit;
+  background: #222;
+  padding: 0 0.325rem;
+  position: relative;
+  top: -5px;
+  color: #eee;
+  border-radius: 0.125rem;
+  margin-left: 5px;
 }

@@ -7,7 +7,7 @@ const ThoughtsForm = ({ newThought, onNewThoughtChange, handleFormSubmit }) => {
   // display warning if characters exceed maximum allowed, otherwise display amount of characters
   const characterWarning = () => {
     if (newThought.length > 140) {
-      return (<p>Warning! Too many characters...</p>)
+      return (<p>Oops! Too many characters...</p>)
     } else {
       return (
         <div className="character-div">
@@ -20,8 +20,8 @@ const ThoughtsForm = ({ newThought, onNewThoughtChange, handleFormSubmit }) => {
     <section className="form-section">
       <form onSubmit={handleFormSubmit}>
         <label className="label" htmlFor="new-thought">
-          <h1>Welcome to Good Vibes.</h1>
-          <h2>Type a new vibe below.</h2>
+          <h1>Welcome to Happy Thoughts.</h1>
+          <h2>Type a new thought below.<span>Max 140 characters</span></h2>
           <textarea
             value={newThought}
             onChange={onNewThoughtChange}
@@ -36,7 +36,7 @@ const ThoughtsForm = ({ newThought, onNewThoughtChange, handleFormSubmit }) => {
           type="submit"
           className="button submit-btn no-glow"
           disabled={isSubmitButtonDisabled}>
-        Send Good Vibe
+        Send Happy Thought
         </button>
       </form>
     </section>
