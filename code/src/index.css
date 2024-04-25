@@ -1,4 +1,5 @@
 :root {
+  --black: #151302;
   --btn-color: #151302;
   --btn-hover: #CF00CF;
   --btn-border: #CF00CF;
@@ -27,7 +28,7 @@ body {
   width: 100%;
   overflow-x: hidden;
   line-height: 1.4;
-  color: #151302;
+  color: var(--black);
 }
 
 code {
@@ -239,12 +240,24 @@ a.button, button.button {
   fill: currentColor;
 }
 
+/* svg spinner */
 
 .loading-div {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 10px;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.spin {
+  transform-origin: center;
+  animation: spin 2s linear infinite;
 }
 
 .form-animation {
