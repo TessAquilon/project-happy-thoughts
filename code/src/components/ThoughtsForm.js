@@ -1,6 +1,8 @@
 /* eslint-disable linebreak-style */
 import React from 'react';
 
+import confetti from 'canvas-confetti';
+
 const ThoughtsForm = ({ newThought, onNewThoughtChange, handleFormSubmit }) => {
   // disabling the submit button if characters exceed maximum allowed
   const isSubmitButtonDisabled = newThought.length < 1 || newThought.length > 140;
@@ -34,6 +36,7 @@ const ThoughtsForm = ({ newThought, onNewThoughtChange, handleFormSubmit }) => {
         </label>
         <button
           type="submit"
+          onClick={() => confetti()}
           className="button submit-btn no-glow"
           disabled={isSubmitButtonDisabled}>
         Send Happy Thought
